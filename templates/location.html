@@ -1,0 +1,25 @@
+{% extends "layout.html"%} {% block content %}
+
+<div>
+  <strong><h2>Perfil da Localização</h2></strong>
+</div>
+<table class="table table-bordered border-primary">
+  <tr>
+  <strong><th>Nome: {{location.name}}</th></strong>
+  <strong><th>Tipo: {{location.type}}</th></strong>
+  <strong><th>Dimensão: {{location.dimension}}</th></strong>
+  </tr>
+  <br />
+</table>
+        <p><strong>Personagens:</strong></p>
+  <table class="table table-bordered border-primary">
+
+     {% for character in location.characters %}
+
+    <tr>
+      <td><a href="/profile/{{character.id}}">{{character.name}}</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html"%}
+
+
+{% block content %}
+
+                    <div>
+                        <h2>Episódios</h2>
+                    </div>
+                    <div class="row ">
+
+                             <strong><p>Nome:{{episode.name}}</p></strong>
+                             <strong><p>Data de lançamento:{{episode.air_date}}</p></strong>
+                             <strong> <p>Código:{{episode.episode}}</p></strong>
+
+
+                    <p><strong>Personagens:</strong></p>
+
+                <table class="table table-bordered border-primary">
+                            {% for character in episode.characters %}
+
+                            <tr>
+                                <td href="/profile/{{character.id}}"><a></a>{{character.name}}</td>
+                            </tr>
+
+                    {% endfor %}
+                </table>
+            </div>
+        {% endblock %}
+

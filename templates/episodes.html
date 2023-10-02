@@ -1,0 +1,30 @@
+{% extends "layout.html"%}
+
+
+{% block content %}
+
+            <div class="row ">
+                <div>
+                        <h2>Episódios</h2>
+
+                    <table class="table table-bordered border-primary">
+
+                        <tr>
+                                <th>Nome:</th>
+                                <th>Data de Lançamento:</th>
+                                <th>Código:</th>
+
+
+                        </tr>
+                            {% for episode in episodes %}
+                            <tr>
+                                <td><a href="/episode/{{episode.id}}">{{episode.name}}</a></td>
+                                <td>{{episode.air_date}}</td>
+                                <td>{{episode.episode}}</td>
+                            </tr>
+                            {% endfor %}
+                    </table>
+                </div>
+            </div>
+                    {% endblock %}
+
